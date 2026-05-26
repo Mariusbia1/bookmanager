@@ -7,9 +7,14 @@ import { DetailPage } from './pages/DetailPage'
 import { HomePage } from './pages/HomePage'
 
 export default function App() {
+  const basename =
+    import.meta.env.BASE_URL === '/'
+      ? undefined
+      : import.meta.env.BASE_URL.replace(/\/$/, '')
+
   return (
     <BookmarksProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={basename}>
         <GlobalBookmarkModal />
         <Routes>
           <Route element={<AppLayout />}>
