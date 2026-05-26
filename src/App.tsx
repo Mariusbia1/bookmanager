@@ -9,7 +9,7 @@ import { HomePage } from './pages/HomePage'
 export default function App() {
   return (
     <BookmarksProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <GlobalBookmarkModal />
         <Routes>
           <Route element={<AppLayout />}>
