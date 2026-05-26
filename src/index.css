@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bm-page: #f0f4f0;
+  --color-bm-primary: #1a3a2a;
+  --color-bm-tag: #f0f0f0;
+  --color-bm-body: #1a1a1a;
+  --color-bm-muted: #666666;
+}
+
+@utility custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--color-neutral-400) 65%, transparent)
+    transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, var(--color-neutral-500) 45%, transparent);
+}
